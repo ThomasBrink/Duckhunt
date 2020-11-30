@@ -1,28 +1,19 @@
-body{
-	text-align: center;
+*{
+	margin: 0;
+	padding: 0;
 }
 
 #eend{
-	position: relative;
+	position: absolute;
 	width: 100px;
 	height: 100px;
-}
-
-.stage{
-	position: relative;
-	background:url("stage.png");
-	width: 1500px;
-	height: 770px;
-	bottom: 300px;
-	margin-top: 200px;	
-	z-index: -1;
-
-}
-
-#button_1, #button_2, #button_3, #button_4{
-	
+	left: 670px;
+	top: 270px;
 }
 
 .container{
-	width: 1000px;
+	position: relative;
+	width: 1500px;
+	height: 700px;
+	background:url("stage.png");
 }
