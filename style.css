@@ -11,9 +11,25 @@
 	top: 270px;
 }
 
-.container{
+#container{
 	position: relative;
-	width: 1500px;
+	width: 1535px;
 	height: 700px;
 	background:url("stage.png");
+}
+
+.stats{
+	background-color: grey;
+	width: 150px;
+	height: 90px;
+	border: 4px black solid;
+	border-radius: 10px;
+}
+
+.text{
+	color: white;
+}
+
+#hit{
+	color: white;
 }

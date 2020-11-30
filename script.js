@@ -4,15 +4,15 @@ var left = document.getElementById("left");
 var right = document.getElementById("right");
 var up = document.getElementById("up");
 var down = document.getElementById("down");
+var hit = document.getElementById("hit");
 var PosLeft = 675;
 var PosTop = 270;
 var random
-
-// na 10 uit beeld
+var hits = 0;
 
 
 setInterval(function(){ 
-	 random = 0 //Math.floor(Math.random() * 4) + 0;
+	 random = Math.floor(Math.random() * 4) + 0;
 	 console.log(random)
 	 var number = richting[random];
 	 moveduck(number);
@@ -20,28 +20,51 @@ setInterval(function(){
 
 function moveduck(richting){
 	if(richting == "left"){
+		if(PosLeft < 1){
+			PosLeft = PosLeft - 0;
+		}
+		else{
 		PosLeft -= 75;
 		eend.style.left = PosLeft + "px";
-		 if(PosLeft <= 0){
-		 	PosLeft = PosLeft - 0;
-		 }
+		}
 	}
 
 	else if(richting == "right"){
+		if(PosLeft > 1350){
+			PosLeft = PosLeft - 0;
+		}
+		else{
 		PosLeft += 75;
 		eend.style.left = PosLeft + "px";
+		}
 	}
 
 	else if(richting == "up"){
+		if(PosTop < 1){
+			PosTop = PosTop - 0;
+		}
+		else{
 		PosTop -= 75;
 		eend.style.top = PosTop + "px";
+		}
 	}
 	else{
+		if(PosTop > 495){
+			PosTop = PosTop - 0;
+		}
+		else{
 		PosTop += 75;
 		eend.style.top = PosTop + "px";
+		}
 	}
 
 }
+
+eend.addEventListener("click", function(){
+	hits++
+	console.log(hits);
+	hit.innerText = hits;
+});
 
 left.addEventListener("click", function(){
 	PosLeft -= 75;
