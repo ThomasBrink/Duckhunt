@@ -1,36 +1,30 @@
-var richting = ["left", "richt", "up", "down"];
+var richting = ["left", "right", "up", "down"];
 var eend = document.getElementById("eend")
 var left = document.getElementById("left");
 var right = document.getElementById("right");
 var up = document.getElementById("up");
 var down = document.getElementById("down");
-var PosLeft = 670;
+var PosLeft = 675;
 var PosTop = 270;
 var random
 
+// na 10 uit beeld
+
 
 setInterval(function(){ 
-	 random = Math.floor(Math.random() * 4) + 0;
+	 random = 0 //Math.floor(Math.random() * 4) + 0;
 	 console.log(random)
-	if(random == 0){
-		moveleft();
-	}
-	else if(random == 1){
-		moveright();
-	}
-
-	else if(random == 2){
-		moveup();
-	}
-	else if(random == 3){
-		movedown();
-	}
+	 var number = richting[random];
+	 moveduck(number);
 		}, 1000);
 
 function moveduck(richting){
 	if(richting == "left"){
 		PosLeft -= 75;
 		eend.style.left = PosLeft + "px";
+		 if(PosLeft <= 0){
+		 	PosLeft = PosLeft - 0;
+		 }
 	}
 
 	else if(richting == "right"){
@@ -48,27 +42,6 @@ function moveduck(richting){
 	}
 
 }
-
-function moveleft(){
-	PosLeft -= 75;
-	eend.style.left = PosLeft + "px";
-}
-
-function moveright(){
-	PosLeft += 75;
-	eend.style.left = PosLeft + "px";
-}
-
-function moveup(){
-	PosTop -= 75;
-	eend.style.top = PosTop + "px";
-}
-
-function movedown(){
-	PosTop += 75;
-	eend.style.top = PosTop + "px";
-}
-
 
 left.addEventListener("click", function(){
 	PosLeft -= 75;
