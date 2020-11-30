@@ -5,15 +5,17 @@ var right = document.getElementById("right");
 var up = document.getElementById("up");
 var down = document.getElementById("down");
 var hit = document.getElementById("hit");
+var miss = document.getElementById("miss");
+var container = document.getElementById("container");
 var PosLeft = 675;
 var PosTop = 270;
 var random
 var hits = 0;
+var miss = 0;
 
 
 setInterval(function(){ 
 	 random = Math.floor(Math.random() * 4) + 0;
-	 console.log(random)
 	 var number = richting[random];
 	 moveduck(number);
 		}, 1000);
@@ -62,29 +64,15 @@ function moveduck(richting){
 
 eend.addEventListener("click", function(){
 	hits++
-	console.log(hits);
 	hit.innerText = hits;
 });
 
-left.addEventListener("click", function(){
-	PosLeft -= 75;
-	eend.style.left = PosLeft + "px";
+container.addEventListener("click", function(){
+	miss++
+	console.log(miss)
+	miss.innerText = miss;
 });
 
-right.addEventListener("click", function(){
-	PosLeft += 75;
-	eend.style.left = PosLeft + "px";
-});
-
-up.addEventListener("click", function(){
-	PosTop -= 75;
-	eend.style.top = PosTop + "px";
-});
-
-down.addEventListener("click", function(){
-	PosTop += 75;
-	eend.style.top = PosTop + "px";
-});
 
 
 

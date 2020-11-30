@@ -9,27 +9,51 @@
 	height: 100px;
 	left: 675px;
 	top: 270px;
+	transition: 0.1s linear;
 }
 
 #container{
 	position: relative;
-	width: 1535px;
+	width: 1536px;
 	height: 700px;
 	background:url("stage.png");
 }
 
 .stats{
+	position: relative;
 	background-color: grey;
-	width: 150px;
-	height: 90px;
+	width: 250px;
+	height: 120px;
 	border: 4px black solid;
 	border-radius: 10px;
+	left: 600px;
+	top: 500px;
 }
 
 .text{
 	color: white;
+	font-size: 40px;
+	margin-left: 5px;
 }
 
 #hit{
 	color: white;
+	font-size: 40px;
+	margin-left: 20px;
+}
+
+.text2{
+	position: relative;
+	color: white;
+	font-size: 40px;
+	left: 170px;
+	bottom: 93px;
+}
+
+#miss{
+	position: relative;
+	color: white;
+	font-size: 40px;
+	left: 190px;
+	bottom: 93px;
 }
