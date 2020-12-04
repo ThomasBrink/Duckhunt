@@ -19,7 +19,7 @@
 	background:url("stage.png");
 }
 
-.stats{
+#stats{
 	position: relative;
 	background-color: grey;
 	width: 250px;
@@ -56,4 +56,58 @@
 	font-size: 40px;
 	left: 190px;
 	bottom: 93px;
+}
+
+#misspoint{
+	position: relative;
+	width: 1536px;
+	height: 700px;
+	bottom: 710px;
+}
+
+#gameover{
+	position: absolute;
+	background-color: grey;
+	display: none;
+	bottom: 200px;
+	width: 250px;
+	height: 250px;
+	border: black 4px solid;
+	border-radius: 10px;
+	left: 600px;
+
+}
+
+.score{
+	color: white;
+	font-size: 40px;
+	margin-left: 70px;
+}
+
+.hitG{
+	color: white;
+	font-size: 40px;
+	margin-left: 5px;
+}
+
+#hit2{
+	color: white;
+	font-size: 40px;
+	margin-left: 25px;
+}
+
+.missG{
+	position: relative;
+	color: white;
+	font-size: 40px;
+	left: 160px;
+	bottom: 93px;
+}
+
+#miss2{
+	position: relative;
+	color: white;
+	font-size: 40px;
+	left: 190px;
+	bottom: 96px;
 }

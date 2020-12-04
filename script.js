@@ -1,21 +1,25 @@
 var richting = ["W", "O", "N", "Z", "NO", "ZO", "ZW", "NW" ];
-var eend = document.getElementById("eend")
+var eend = document.getElementById("eend");
 var hit = document.getElementById("hit");
 var miss = document.getElementById("miss");
-var container = document.getElementById("container");
+var hit2 = document.getElementById("hit2");
+var miss2 = document.getElementById("miss2");
+var misspoint = document.getElementById("misspoint");
+var gameover = document.getElementById("gameover");
+var stats = document.getElementById("stats");
 var PosLeft = 675;
 var PosTop = 270;
-var random
+var random;
+var shots = 20;
 var hits = 0;
-var miss = 0;
+var misscount = 0;
 
 
 setInterval(function(){ 
 	 random = Math.floor(Math.random() * 8) + 0;
-	 console.log(random)
 	 var number = richting[random];
 	 moveduck(number);
-		}, 1000);
+		}, 500);
 
 function moveduck(richting){
 	if(richting == "W"){
@@ -108,17 +112,31 @@ function moveduck(richting){
 }
 
 eend.addEventListener("click", function(){
-	hits++
+	hits++;
+	shots--;
+	console.log(shots);
 	hit.innerText = hits;
+	Done();
 });
 
-container.addEventListener("click", function(){
-	miss++
-	console.log(miss)
-	miss.innerText = miss;
+misspoint.addEventListener("click", function(){
+	misscount++
+	shots--;
+	console.log(shots);
+	miss.innerText = misscount;
+	Done();
 });
 
 
+function Done(){
+	if(shots == 0){
+		hit2.innerText = hits;
+		miss2.innerText = misscount;
+		eend.style.display = "none";
+		gameover.style.display = "inline-block";
+		stats.style.display = "none";
+	}
+};
 
 
 
@@ -126,4 +144,7 @@ container.addEventListener("click", function(){
 
 
 
+
+
+	
 
